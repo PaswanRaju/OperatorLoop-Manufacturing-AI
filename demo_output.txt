@@ -1,0 +1,31 @@
+Snapshot: nozzle temperature 210.7 C, vibration 1.55 g, layer time 12.0 s, defect score 0.56
+Detected condition: vibration_instability
+
+Retrieved guidance:
+  - thermal_overheating (similarity=0.202)
+  - slow_layer_cycle (similarity=0.131)
+
+LLM-ready grounded prompt:
+
+You are assisting a manufacturing operator. Treat the operator as the final decision-maker.
+Use only the supplied process guidance and sensor snapshot. Recommend at most one conservative action,
+explain the reason briefly, and state when human inspection is required. Do not invent machine limits.
+
+SENSOR SNAPSHOT
+nozzle temperature 210.7 C, vibration 1.55 g, layer time 12.0 s, defect score 0.56
+
+RETRIEVED PROCESS GUIDANCE
+- thermal_overheating: Reduce nozzle temperature gradually and inspect extrusion consistency before the next run. Constraint: recommended nozzle temperature must stay between 190 and 240 C
+- slow_layer_cycle: Check motion settings and material flow; consider a small speed increase only when vibration and defect score remain low. Constraint: speed increases require vibration <= 1.2 g and defect score <= 0.35
+
+Return fields: observed_issue, recommended_action, rationale, human_check, cited_guidance.
+
+Baseline recommendation:
+ {
+  "observed_issue": "vibration_instability",
+  "recommended_action": "Reduce nozzle temperature gradually and inspect extrusion consistency before the next run.",
+  "rationale": "Recommendation is grounded in the closest process guidance for the detected condition.",
+  "human_check": "Operator must approve, edit, or reject the recommendation before any process change.",
+  "cited_guidance": "thermal_overheating"
+}
+Constraint violations: none

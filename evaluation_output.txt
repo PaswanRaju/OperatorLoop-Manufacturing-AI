@@ -1,0 +1,6 @@
+Synthetic runs: 160
+Injected anomalies: 28
+Anomaly coverage: 100.0%
+False-alarm rate: 0.0%
+Constraint violations from baseline recommendations: 0
+Operator feedback records: 0 (run the CLI and log feedback to populate this metric)

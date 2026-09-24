@@ -1,0 +1,2 @@
+timestamp,run_id,decision,original_action,edited_action
+2026-09-24T14:37:01.853843+00:00,R005,edit,Reduce nozzle temperature gradually and inspect extrusion consistency before the next run.,Inspect the machine before making any parameter change.

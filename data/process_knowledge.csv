@@ -1,0 +1,6 @@
+issue,signals,guidance,constraint
+thermal_overheating,"high nozzle temperature, elevated defect score","Reduce nozzle temperature gradually and inspect extrusion consistency before the next run.","recommended nozzle temperature must stay between 190 and 240 C"
+vibration_instability,"high vibration, surface irregularity","Pause for mechanical inspection, verify fasteners and motion components, then resume at a conservative speed.","do not recommend increasing speed when vibration is above 1.2 g"
+slow_layer_cycle,"high layer time, normal quality","Check motion settings and material flow; consider a small speed increase only when vibration and defect score remain low.","speed increases require vibration <= 1.2 g and defect score <= 0.35"
+quality_drift,"rising defect score, otherwise normal sensors","Inspect recent layers and material feed; hold aggressive process changes until the defect source is identified.","do not recommend aggressive parameter changes when defect score exceeds 0.55"
+normal_operation,"stable temperature, low vibration, low defect score","Keep current parameters and continue monitoring for drift.","avoid unnecessary changes during stable operation"
